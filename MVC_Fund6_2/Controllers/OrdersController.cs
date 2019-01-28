@@ -219,7 +219,7 @@ namespace MVC_Fund6_2.Controllers
             var query = (from c in db.Customers.AsEnumerable()
                          join o in db.Orders.AsEnumerable() on c.CustomerId equals o.CustomerId//////
                          join p in db.Products.AsEnumerable() on o.ProductId equals p.ProductId //
-                         where c.Name == y
+                         where c.Name == y || c.Surname == y || (c.CustomerId).ToString()==y
                          select new X
                          {
                              CustomerId = c.CustomerId,
